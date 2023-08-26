@@ -104,7 +104,7 @@ public class FileService {
         return fileAttachmentRepository.save(attachment);
     }
 
-    @Scheduled(fixedRate = 24 * 60 * 60 * 1000)
+    @Scheduled(fixedRate = 24 * 60 * 60 * 1000, initialDelay = 300000)
     public void cleanupStorage() {
         Date twentyFourHoursAgo = new Date(System.currentTimeMillis() - (24 * 60 * 60 * 1000));
         List<FileAttachment> filesToBeDeleted = fileAttachmentRepository.findByDateBeforeAndSocialIsNull(twentyFourHoursAgo);
