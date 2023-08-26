@@ -1,6 +1,7 @@
 package com.social.ws.user.vm;
 
 
+
 import com.social.ws.user.User;
 import lombok.Data;
 
