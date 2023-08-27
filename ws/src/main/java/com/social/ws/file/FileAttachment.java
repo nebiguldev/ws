@@ -8,6 +8,7 @@ import java.util.Date;
 
 @Data
 @Entity
+@Table(name="file_attachments")
 public class FileAttachment {
 
     @Id

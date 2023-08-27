@@ -115,6 +115,7 @@ public class FileService {
 
     }
 
+
     public void deleteAllStoredFilesForUser(User inDB) {
         deleteProfileImage(inDB.getImage());
         List<FileAttachment> filesToBeRemoved = fileAttachmentRepository.findBySocialUser(inDB);

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -19,13 +20,12 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 
-
-
 import lombok.Data;
 
 @Data
 @Entity
-public class User implements UserDetails{
+@Table(name="users")
+public class User implements UserDetails {
 
     private static final long serialVersionUID = -8421768845853099274L;
 
@@ -79,5 +79,4 @@ public class User implements UserDetails{
     public boolean isEnabled() {
         return true;
     }
-
 }
